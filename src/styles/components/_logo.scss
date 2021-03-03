@@ -1,0 +1,18 @@
+// import d'image
+// <img src="./img/mon-image"> : l'image doit etre stockée dans le "public"
+// background-image : l'image doit etre stockée dans le src/assets
+.logo {
+  background: url(../../assets/main.jpg) center/cover;
+  width: 200px;
+  height: 60px;
+  color: $color-1;
+  border-radius: 20px;
+  @include verticalCenter;
+
+  img {
+    height: 34px;
+    width: 34px;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+}

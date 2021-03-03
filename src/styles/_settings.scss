@@ -1,0 +1,16 @@
+$color-1: rgb(6, 164, 255);
+$color-2: rgb(3, 82, 3);
+$color-3: rgb(192, 192, 3);
+
+@mixin verticalCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background: $color-1;
+}
+h1 {
+  color: $color-2;
+}
