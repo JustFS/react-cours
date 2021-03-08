@@ -1,15 +1,44 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  let maVariable = "coucou";
-  const [name, setName] = useState("coucou");
+  const [nom, setNom] = useState("coucou");
+  const [prenom, setPrenom] = useState();
+  const panier = ["Stylo"];
 
   return (
-    <form>
-      <input type="text" placeholder="nom" />
-      <input type="text" placeholder="prenom" />
-      {name}
-    </form>
+    <>
+      <form>
+        <input
+          onChange={(event) => setNom(event.target.value)}
+          type="text"
+          placeholder="nom"
+        />
+        <input
+          onChange={(event) => setPrenom(event.target.value)}
+          type="text"
+          placeholder="prenom"
+        />
+      </form>
+
+      <div className="hooks">
+        <p>Nom : {nom}</p>
+        <p>Prénom : {prenom}</p>
+
+        {prenom && (
+          <p>Ce rendu ne s'affiche que lorsque le prénom est complété</p>
+        )}
+
+        <h2>Ternaire</h2>
+        {/* test               valeur si vrai     si faux */}
+        <p>{prenom === "Julien" ? "Le prénom existe" : "Pas de prénom"}</p>
+
+        <h2>Panier</h2>
+        <p>
+          {panier.length} article{panier.length > 1 ? "s" : null} dans votre
+          panier
+        </p>
+      </div>
+    </>
   );
 };
 
