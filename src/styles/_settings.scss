@@ -1,6 +1,6 @@
 $color-1: #61dafb;
-$color-2: rgb(3, 82, 3);
-$color-3: rgb(192, 192, 3);
+$color-2: rgb(79, 82, 79);
+$color-3: rgb(92, 250, 255);
 
 @mixin verticalCenter {
   display: flex;
@@ -10,6 +10,8 @@ $color-3: rgb(192, 192, 3);
 
 body {
   background: $color-1;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 h1 {
   color: $color-2;

@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [nom, setNom] = useState("coucou");
+  const [nom, setNom] = useState("julien");
   const [prenom, setPrenom] = useState();
   const panier = ["Stylo"];
 
+  const handleForm = (e) => {
+    // ne change pas la page après validation
+    e.preventDefault();
+
+    if (nom && prenom) {
+      console.log(nom, prenom);
+    } else {
+      console.log("formulaire mal rempli !");
+    }
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={(event) => handleForm(event)}>
         <input
           onChange={(event) => setNom(event.target.value)}
           type="text"
@@ -18,6 +29,7 @@ const Form = () => {
           type="text"
           placeholder="prenom"
         />
+        <input type="submit" value="Valider" />
       </form>
 
       <div className="hooks">
