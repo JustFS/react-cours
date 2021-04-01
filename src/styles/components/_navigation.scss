@@ -4,8 +4,40 @@
   ul {
     display: flex;
 
-    li {
+    a {
       margin: 0 20px;
+      text-decoration: none;
+    }
+    a,
+    a:visited {
+      color: $color-3;
+    }
+    .nav-active {
+      position: relative;
+    }
+    .nav-active::after {
+      position: absolute;
+      content: "";
+      height: 3px;
+      width: 0;
+      background: $color-1;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-animation: anim 0.3s forwards;
+              animation: anim 0.3s forwards;
+
+      @-webkit-keyframes anim {
+        to {
+          width: 120%;
+        }
+      }
+
+      @keyframes anim {
+        to {
+          width: 120%;
+        }
+      }
     }
   }
 }
