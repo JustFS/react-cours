@@ -1,20 +1,21 @@
-$color-1: #61dafb;
-$color-2: rgb(79, 82, 79);
-$color-3: rgb(92, 250, 255);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 
-@mixin verticalCenter {
+$font-1: "Poppins", sans-serif;
+
+$color-1: rgb(33, 6, 105);
+$color-2: rgb(0, 231, 154);
+$color-3: tomato;
+
+@mixin center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 body {
-  background: $color-1;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-h1 {
-  color: $color-2;
+  background: $color-2;
+  color: $color-1;
+  font-family: $font-1;
 }
 
 li {

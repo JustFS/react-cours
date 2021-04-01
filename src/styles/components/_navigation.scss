@@ -1,43 +1,11 @@
 .nav {
+  margin: 26px 0;
+
   ul {
     display: flex;
-    justify-content: space-around;
 
     li {
-      list-style-type: none;
-      color: $color-3;
-      transition: 0.4s;
-      position: relative;
-
-      &:hover {
-        transform: scale(1.03);
-      }
-
-      a {
-        text-decoration: none;
-        color: $color-2;
-        font-size: 1.3rem;
-      }
-      .nav-active {
-        &::after {
-          content: "";
-          position: absolute;
-          height: 3px;
-          width: 0;
-          background: $color-3;
-          bottom: -10px;
-          left: 50%;
-          transform-origin: right;
-          transform: translateX(-50%);
-          animation: anim 0.8s ease forwards;
-
-          @keyframes anim {
-            to {
-              width: 110%;
-            }
-          }
-        }
-      }
+      margin: 0 20px;
     }
   }
 }

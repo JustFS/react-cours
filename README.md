@@ -1,1 +1,1 @@
-Pour installer : `npm i`
+Pour reprendre le projet : `npm install`
