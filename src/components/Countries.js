@@ -29,6 +29,7 @@ const Countries = () => {
       const countryObj = Object.keys(countriesData).map(
         (i) => countriesData[i]
       );
+
       const sortedArray = countryObj.sort((a, b) => {
         return b.population - a.population;
       });
@@ -38,7 +39,7 @@ const Countries = () => {
     sortedCountry();
 
     // rejoue le useEffect quand le callback [] est appelé
-  }, [rangeValue, playOnce, countriesData]);
+  }, [rangeValue, countriesData, playOnce]);
 
   return (
     <div className="countries">
