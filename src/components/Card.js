@@ -1,8 +1,6 @@
 import React from "react";
 
-const Card = (props) => {
-  const { country } = props;
-
+const Card = ({ country }) => {
   const transformNumber = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
