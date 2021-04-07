@@ -12,6 +12,11 @@ $color-3: tomato;
   align-items: center;
 }
 
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: $color-2;
   color: $color-1;
