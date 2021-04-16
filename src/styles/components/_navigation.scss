@@ -3,10 +3,25 @@
     display: flex;
     justify-content: space-around;
     width: 60%;
-    margin: 10px auto;
+    margin: 30px auto;
+
+    a {
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .nav-active {
+      background: $color-2;
+    }
 
     li {
       color: $color-1;
+      transition: 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-3;
+      }
     }
   }
 }
