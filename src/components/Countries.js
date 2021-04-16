@@ -10,13 +10,23 @@ const Countries = () => {
     )
     .then((res) => setData(res.data));
 
+  const numberFormat = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  console.log(numberFormat(3404039403490));
+
   return (
     <div className="countries">
       <ul>
         {data.map((country) => (
           <li className="card">
-            <h2>{country.name}</h2>
-            {/* Afficher Drapeau, la capitale & la population (séparateur de milliers) */}
+            <img src={country.flag} alt="" />
+            <div className="infos">
+              <h2>{country.name}</h2>
+              <h4>{country.capital}</h4>
+              <p>Pop. {numberFormat(country.population)}</p>
+            </div>
           </li>
         ))}
       </ul>
