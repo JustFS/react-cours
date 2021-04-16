@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400&display=swap");
 
-$font-1: "Poppins", sans-serif;
+$font-1: "Josefin Sans", sans-serif;
 
-$color-1: rgb(33, 6, 105);
-$color-2: rgb(0, 231, 154);
-$color-3: tomato;
+$color-1: #61dafb;
+$color-2: salmon;
+$color-3: #282c34;
+$white: rgb(243, 243, 243);
 
-@mixin center {
+@mixin verticalCenter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,15 +15,15 @@ $color-3: tomato;
 
 * {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 body {
-  background: $color-2;
-  color: $color-1;
+  background: $white;
   font-family: $font-1;
+  // @include verticalCenter;
 }
-
 li {
   list-style-type: none;
 }

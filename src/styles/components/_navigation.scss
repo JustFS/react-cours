@@ -1,42 +1,12 @@
-.nav {
-  margin: 26px 0;
-
+.navigation {
   ul {
     display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 10px auto;
 
-    a {
-      margin: 0 20px;
-      text-decoration: none;
-    }
-    a,
-    a:visited {
-      color: $color-3;
-    }
-    .nav-active {
-      position: relative;
-    }
-    .nav-active::after {
-      position: absolute;
-      content: "";
-      height: 3px;
-      width: 0;
-      background: $color-1;
-      bottom: -6px;
-      left: 50%;
-      transform: translateX(-50%);
-      -webkit-animation: anim 0.4s forwards;
-      animation: anim 0.4s forwards;
-
-      @-webkit-keyframes anim {
-        to {
-          width: 120%;
-        }
-      }
-      @keyframes anim {
-        to {
-          width: 120%;
-        }
-      }
+    li {
+      color: $color-1;
     }
   }
 }

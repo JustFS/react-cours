@@ -1,1 +1,3 @@
-Pour reprendre le projet : `npm install`
+# Indications du projet
+
+Télécharger node_modules `npm i`
