@@ -1,34 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const Countries = () => {
   const [data, setData] = useState([]);
+  const [selectedRadio, setSelectedRadio] = useState("");
+  const [rangeValue, setRangeValue] = useState(50000000);
+  const [searchInput, setSearchInput] = useState("");
+  const [isCrescent, setIsCrescent] = useState(false);
+  const radios = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
-  axios
-    .get(
-      "https://restcountries.eu/rest/v2/all?fields=name;population;region;capital;flag"
-    )
-    .then((res) => setData(res.data));
+  useEffect(() => {
+    axios
+      .get(
+        "https://restcountries.eu/rest/v2/all?fields=name;population;region;capital;flag"
+      )
+      .then((res) => setData(res.data));
+  }, []);
 
   const numberFormat = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   };
 
-  console.log(numberFormat(3404039403490));
-
   return (
     <div className="countries">
-      <ul>
-        {data.map((country) => (
-          <li className="card">
-            <img src={country.flag} alt="" />
-            <div className="infos">
-              <h2>{country.name}</h2>
-              <h4>{country.capital}</h4>
-              <p>Pop. {numberFormat(country.population)}</p>
-            </div>
+      <ul className="radio-container">
+        {radios.map((continent, index) => (
+          <li key={index}>
+            <input
+              type="radio"
+              name="continent"
+              id={continent}
+              checked={continent === selectedRadio}
+              onChange={(e) => setSelectedRadio(e.target.id)}
+            />
+            <label htmlFor={continent}>{continent}</label>
           </li>
         ))}
+      </ul>
+      {selectedRadio && (
+        <button onClick={() => setSelectedRadio("")}>Annuler recherche</button>
+      )}
+      <br />
+      <input
+        type="text"
+        placeholder="Entrez le nom d'un pays (en anglais)"
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
+
+      {isCrescent ? (
+        <button onClick={() => setIsCrescent(false)}>Tri décroissant</button>
+      ) : (
+        <button onClick={() => setIsCrescent(true)}>Tri croissant</button>
+      )}
+
+      <br />
+      <input
+        type="range"
+        min="0"
+        max="1377482166"
+        defaultValue={rangeValue}
+        onChange={(e) => setRangeValue(e.target.value)}
+      />
+      <p style={{ marginBottom: "20px" }}>
+        {numberFormat(rangeValue)} habitants
+      </p>
+      <ul>
+        {data
+          .filter((country) => country.region.includes(selectedRadio))
+          .filter((country) => country.population > rangeValue)
+          .filter((country) =>
+            country.name.toLowerCase().includes(searchInput.toLowerCase())
+          )
+          .sort((a, b) => {
+            if (isCrescent) {
+              return a.population - b.population;
+            } else {
+              return b.population - a.population;
+            }
+          })
+          .map((country) => (
+            <Card key={country.name} country={country} />
+          ))}
       </ul>
     </div>
   );
