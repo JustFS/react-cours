@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../assets/main.jpg) center/cover;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(250, 128, 114, 0.411);
+
+  img {
+    height: 34px;
+    margin-right: 10px;
+  }
+}
