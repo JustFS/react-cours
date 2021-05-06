@@ -1,3 +1,4 @@
-# Indications du projet
+# Projet React
 
-Télécharger node_modules `npm i`
+Pour démarrer le projet : `npm i`
+Pour lancer le projet : `npm start`
