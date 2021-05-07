@@ -7,6 +7,7 @@ const Countries = () => {
   const [radioChoice, setRadioChoice] = useState("");
   const [searchInput, setSearchInput] = useState("");
   const [rangeValue, setRangeValue] = useState(36);
+  const [isCrescent, setIsCrescent] = useState(false);
   const radios = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   // Ne se joue qu'au lancement du composant
@@ -43,7 +44,7 @@ const Countries = () => {
       <input
         type="range"
         style={{ width: "80%" }}
-        max="250"
+        max="249"
         defaultValue={rangeValue}
         onChange={(e) => setRangeValue(e.target.value)}
       />
@@ -53,6 +54,19 @@ const Countries = () => {
         placeholder="Entrez le nom d'un pays (en anglais)"
         onChange={(e) => setSearchInput(e.target.value)}
       />
+      <button
+        style={{ background: isCrescent && "salmon" }}
+        onClick={() => setIsCrescent(true)}
+      >
+        Tri croissant
+      </button>
+      <button
+        style={{ background: !isCrescent && "salmon" }}
+        onClick={() => setIsCrescent(false)}
+      >
+        Tri décroissant
+      </button>
+
       <div className="countries">
         {data &&
           data
@@ -60,7 +74,13 @@ const Countries = () => {
             .filter((country) =>
               country.name.toLowerCase().includes(searchInput.toLowerCase())
             )
-            .sort((a, b) => b.population - a.population)
+            .sort((a, b) => {
+              if (isCrescent) {
+                return a.population - b.population;
+              } else {
+                return b.population - a.population;
+              }
+            })
             .filter((country, index) => index <= rangeValue)
             .map((country) => <Card key={country.name} country={country} />)}
       </div>
