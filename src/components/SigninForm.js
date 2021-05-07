@@ -4,7 +4,12 @@ const SigninForm = () => {
   const [pseudo, setPseudo] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    const data = {
+      pseudo,
+      password,
+    };
+  };
 
   return (
     <form className="signinForm" onSubmit={handleSubmit}>
