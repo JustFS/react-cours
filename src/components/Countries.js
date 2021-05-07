@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const Countries = () => {
   const [data, setData] = useState([]);
@@ -15,10 +16,8 @@ const Countries = () => {
 
   return (
     <div className="countries">
-      {data.map((country) => (
-        <p>{country.name}</p>
-        // A afficher : Drapeau, nom du pays, capitale, pop (séparateur de milliers)
-      ))}
+      {data &&
+        data.map((country) => <Card key={country.name} country={country} />)}
     </div>
   );
 };
