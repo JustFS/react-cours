@@ -1,37 +1,73 @@
-.countries {
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+.countries-container {
+  .countries {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 
-  .card {
-    height: 200px;
-    width: 320px;
-    margin: 5px;
-    position: relative;
+    .card {
+      height: 200px;
+      width: 320px;
+      margin: 5px;
+      position: relative;
 
-    &:hover .country-infos {
-      opacity: 1;
-      transform: scaleY(1);
+      &:hover .country-infos {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .country-infos {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.627);
+        opacity: 0;
+        transition: 0.2s;
+        transform: scaleY(0);
+      }
     }
+  }
+  .radio-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: $color-1;
+    color: $color-3;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 0 40px;
+    box-shadow: 0 0 40px rgba(179, 179, 179, 0.6);
+    height: 30px;
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      z-index: 1;
+    input[type="radio"] {
+      display: none;
     }
-    .country-infos {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: grid;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.627);
-      opacity: 0;
-      transition: 0.2s;
-      transform: scaleY(0);
+    input[type="radio"]:checked + label {
+      color: rgb(255, 255, 255);
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    label {
+      margin-left: 6px;
+      cursor: pointer;
+    }
+  }
+  button {
+    transition: 0.2s;
+    color: white;
+
+    &:hover {
+      background: $color-1;
+      transform: scale(1.2);
     }
   }
 }
