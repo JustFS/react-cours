@@ -1,0 +1,20 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  width: 200px;
+  border-radius: 20px;
+  padding: 5px 0;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.281);
+  background: url(../../assets/img/logo.jpg) center/cover;
+
+  img {
+    height: 40px;
+  }
+
+  h3 {
+    margin-left: 10px;
+    color: $color-1;
+  }
+}
