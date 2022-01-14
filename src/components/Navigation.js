@@ -20,6 +20,12 @@ const Navigation = () => {
         >
           <li>Contact</li>
         </NavLink>
+        <NavLink
+          to="/connect"
+          className={(nav) => (nav.isActive ? "nav-active" : "")}
+        >
+          <li>Connexion</li>
+        </NavLink>
       </ul>
     </nav>
   );

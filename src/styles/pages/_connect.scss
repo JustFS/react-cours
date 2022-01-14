@@ -1,0 +1,20 @@
+.connect-container {
+  text-align: center;
+
+  .btn-container {
+    margin: 30px auto;
+
+    button {
+      margin: 5px;
+      background: $color-1;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      width: 160px;
+      cursor: pointer;
+    }
+  }
+  p {
+    color: red;
+  }
+}
