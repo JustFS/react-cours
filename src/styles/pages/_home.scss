@@ -1,0 +1,19 @@
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 30px;
+
+  .card {
+    flex: 1 0 20%;
+    border: 3px solid salmon;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    img {
+      height: 100px;
+      width: 150px;
+      object-fit: cover;
+    }
+  }
+}
