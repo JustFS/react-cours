@@ -10,3 +10,12 @@ h1 {
   font-family: "Segoe UI";
   color: $color2;
 }
+
+li {
+  list-style: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: $color1;
+}

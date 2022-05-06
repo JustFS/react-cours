@@ -1,8 +1,10 @@
 import React from "react";
+import Navigation from "../components/Navigation";
 
 const About = () => {
   return (
     <div className="about-page">
+      <Navigation />
       <h1>ABOUT PAGE</h1>
 
       <p>

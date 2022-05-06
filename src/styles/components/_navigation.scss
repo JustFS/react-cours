@@ -1,0 +1,36 @@
+nav {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+
+    .nav-active {
+      font-weight: bold;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: $color2;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: anim 1s forwards;
+
+        @keyframes anim {
+          to {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
