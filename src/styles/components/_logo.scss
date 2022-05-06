@@ -1,0 +1,20 @@
+.logo {
+  display: flex;
+  align-items: center;
+  background: url(../../assets/img/main.jpg) center/cover;
+  width: 180px;
+  padding: 4px;
+  border-radius: 50px;
+  height: 30px;
+  position: absolute;
+  color: $color1;
+
+  img {
+    height: 34px;
+  }
+
+  h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin-left: 4px;
+  }
+}
